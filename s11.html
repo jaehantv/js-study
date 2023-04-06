@@ -1,6 +1,5 @@
 <script>
     // 표준 라이브러리
-
     // 숫자 관련 메소드
     const num = 1.53;
     // 반올림
@@ -37,4 +36,89 @@
     console.log(str.toUpperCase());
     console.log(str.padStart(10).trim());
     console.log("aa    aa".replaceAll(" ", ""));
+    // 배열 메소드
+    const arr = ["A", "B", "c", "d"];
+    console.log(arr.concat("e", "f"));
+    console.log(arr.concat(["g"]));
+    console.log(arr.copyWithin(0, 0, 4));
+    console.log(arr.fill("a"));
+    console.log([[1, 2], [3, 4]].flat());
+    console.log(arr.pop());
+    console.log(arr);
+    console.log(arr.push("e"));
+    console.log(arr);
+    console.log(arr.shift());
+    console.log(arr);
+    console.log(arr.splice(1,1));
+    console.log(arr);
+    arr.indexOf("d");
+    const idx = arr.indexOf("F");
+    console.log(arr.splice(idx, 1));
+    console.log(arr);
+    // 콜백 함수
+    // callback
+    const temp = () => console.log("ㅎㅇ");
+    const temp1 = () => console.log("ㅂㅇ");
+    const myFunc = (func) => {
+        // 작업 완료시 외부 함수를 작동하고 싶다.
+        // 외부 함수가 개발자가 선택하게 하고 싶다.
+        // console.log("ㅎㅇ");
+        func();
+    }
+    myFunc(temp);
+    myFunc(() => console.log("ㅎㅇ"));
+    myFunc(() => console.log("asdf"));
+
+    // const checkName = (name, checker) => {
+    //     const result = checker(name);
+    //     console.log(result);
+    // }
+    // const tempName = "jaybon";
+    // const tempChecker = (name) => {
+    //     return name.indexOf("a");
+    // }
+    // checkName(tempName.tempChecker);
+
+    // 함수를 매개변수로 받는 배열 메소드
+    // forEach, filter, map, every, find, some, reduce
+    // for (let index = 0; index < array.length; index++) {
+    //     console.log(arr[index]);       
+    // }
+    // for (const item of arr) {
+    //     console.log(item);
+    // }
+    // for(const key in arr) {
+    //     console.log(arr[key]);
+    // }
+
+    const callbackFn = (value, index, array) => {
+        console.log(value);
+        console.log(index);
+        console.log(array);
+    }
+    arr.forEach(element => {});
+
+    arr.forEach(value => console.log(value));
+
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+        
+    // }
+    
+    const predicate = (value) => {
+        return value == "d";
+    }
+
+    console.log(arr.filter((value) => value != "d"));
+
+    // 객체 Map과 Array 메소드 map은 전혀 연관 없다.
+    // 기존 데이터를 변경하거나 타입을 바꿔서 배열을 만들 때 사용
+
+    const callback = (e) => {
+        // return e.repeat(3);
+        return[e];
+    }
+    const result = arr.map(callback);
+    console.log(result);
+
 </script>
